@@ -1,1 +1,2 @@
-# Java_II
+# Java II
+Repository for intermediate java practice
