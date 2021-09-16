@@ -30,9 +30,25 @@ public class Study {
         return sum;
     }
 
+    public static int diff21(int n) {
+        if (n <= 21) {
+            System.out.println(21 - n);
+            return 21 - n;
+        } else {
+            System.out.println((n - 21) * 2);
+            return (n - 21) * 2;
+        }
+    }
+
+    public static boolean parrotTrouble(boolean talking, int hour) {
+        return (talking && (hour < 7 || hour > 20));
+    }
+
     public static void main(String[] args) {
         sleepIn(true, false);
         monkeyTrouble(true, false);
         sumDouble(2,5);
+        diff21(15);
+        parrotTrouble(true, 5);
     }
 }
