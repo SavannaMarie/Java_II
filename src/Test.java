@@ -22,8 +22,10 @@ public class Test {
         IntStream.generate(() -> random.nextInt(10))
                 .limit(10000)
                 .boxed()
-                .collect(Collectors.groupingBy(i -> i))
-                .forEach((k, v) -> System.out.println(k + ": " + v.size()));
+                .collect(Collectors.groupingBy(i -> i, Collectors.counting()))
+                .entrySet().stream()
+                .sorted((dis, dat) -> Long.compare(dat.getValue(), dis.getValue()))
+                .forEach((e -> System.out.println(e.getKey() + ": " + e.getValue())));
         new Random().ints(10000, 0, 10);
 
 
